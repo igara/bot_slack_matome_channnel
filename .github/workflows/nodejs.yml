@@ -1,4 +1,3 @@
-
 name: nodejs
 on: [push]
 
@@ -24,6 +23,7 @@ jobs:
           npm install
       - name: test task
         run: |
+          cp .env.sample.ts .env.ts
           npm run lint
           npm run test
           npm run build
