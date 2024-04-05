@@ -95,6 +95,7 @@ https://${ENV.SLACK_TEAM}.slack.com/archives/${channelID}/p${String(postData.eve
       channel: botSlackMatomeChannelID,
       username: userName,
       icon_url: userImage,
+      unfurl_links: true,
     }),
   });
   const json = JSON.parse(fetch.getContentText());
