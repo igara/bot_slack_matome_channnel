@@ -87,7 +87,7 @@ export const doPost = (e: any) => {
     method: "post",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${ENV.SLACK_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${ENV.SLACK_BOT_USER_OAUTH_TOKEN}`,
     },
     payload: JSON.stringify({
       text: `<#${channelID}>

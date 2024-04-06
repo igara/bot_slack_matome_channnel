@@ -6,7 +6,7 @@ export const getChannelListJson = (nextCursor?: string) => {
   const channelListResponce = UrlFetchApp.fetch(channelListApi, {
     method: "get",
     headers: {
-      Authorization: `Bearer ${ENV.SLACK_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${ENV.SLACK_BOT_USER_OAUTH_TOKEN}`,
     },
   });
   const channelListJson = JSON.parse(channelListResponce.getContentText());

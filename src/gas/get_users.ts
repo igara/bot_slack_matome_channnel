@@ -6,7 +6,7 @@ export const getUserListJson = (nextCursor?: string) => {
   const responce = UrlFetchApp.fetch(api, {
     method: "get",
     headers: {
-      Authorization: `Bearer ${ENV.SLACK_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${ENV.SLACK_BOT_USER_OAUTH_TOKEN}`,
     },
   });
   const json = JSON.parse(responce.getContentText());
