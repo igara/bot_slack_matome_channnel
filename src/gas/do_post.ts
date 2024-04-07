@@ -22,6 +22,14 @@ export const doPost = (e: any) => {
   // callの通知はオフ
   if (postData.event.subtype === "sh_room_created") return;
 
+  // slackの3秒タイムアウトリトライ対策
+  const cache = CacheService.getScriptCache();
+  if (cache.get(postData.event.client_msg_id) == "done") {
+    return ContentService.createTextOutput();
+  } else {
+    cache.put(postData.event.client_msg_id, "done", 600);
+  }
+
   const channelID = postData.event.channel;
   const userID = postData.event.user;
   const text = postData.event.text;
