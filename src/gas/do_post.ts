@@ -1,7 +1,7 @@
 import { default as ENV } from "@root/.env";
 
-export const doPost = (e: any) => {
-  const postData = JSON.parse(e.postData.getDataAsString());
+export const doPost = (e: GoogleAppsScript.Events.DoPost) => {
+  const postData = JSON.parse(e.postData.contents);
 
   // Event Subscriptionsに必要な部分
   if (postData.type == "url_verification") return ContentService.createTextOutput(postData.challenge);

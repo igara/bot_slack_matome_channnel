@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "esnext"],
-    "types": ["@types/node", "@types/google-apps-script", "jest"],
+    "types": ["./types/global.d.ts", "@types/node", "@types/google-apps-script", "jest"],
     "outDir": "./dist",
     "rootDir": "./",
     "baseUrl": "./",
@@ -10,7 +10,7 @@
       "@src/*": ["./src/*"],
       "@root/*": ["./*"]
     },
-    "typeRoots": ["types", "node_modules/@types"],
     "resolveJsonModule": true
-  }
+  },
+  "include": ["src", "tests"]
 }
